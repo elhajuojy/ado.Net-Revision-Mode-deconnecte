@@ -1,0 +1,11 @@
+C:\Users\pc\Desktop\tdi\2eme ans 203\ADO.NET\Ado.Net RevsionNet\Ado.Net RevsionNet\bin\Debug\Ado.Net RevsionNet.exe.config
+C:\Users\pc\Desktop\tdi\2eme ans 203\ADO.NET\Ado.Net RevsionNet\Ado.Net RevsionNet\bin\Debug\Ado.Net RevsionNet.exe
+C:\Users\pc\Desktop\tdi\2eme ans 203\ADO.NET\Ado.Net RevsionNet\Ado.Net RevsionNet\bin\Debug\Ado.Net RevsionNet.pdb
+C:\Users\pc\Desktop\tdi\2eme ans 203\ADO.NET\Ado.Net RevsionNet\Ado.Net RevsionNet\obj\Debug\Ado.Net RevsionNet.csproj.AssemblyReference.cache
+C:\Users\pc\Desktop\tdi\2eme ans 203\ADO.NET\Ado.Net RevsionNet\Ado.Net RevsionNet\obj\Debug\Ado.Net RevsionNet.csproj.SuggestedBindingRedirects.cache
+C:\Users\pc\Desktop\tdi\2eme ans 203\ADO.NET\Ado.Net RevsionNet\Ado.Net RevsionNet\obj\Debug\Ado.Net_RevsionNet.Form1.resources
+C:\Users\pc\Desktop\tdi\2eme ans 203\ADO.NET\Ado.Net RevsionNet\Ado.Net RevsionNet\obj\Debug\Ado.Net_RevsionNet.Properties.Resources.resources
+C:\Users\pc\Desktop\tdi\2eme ans 203\ADO.NET\Ado.Net RevsionNet\Ado.Net RevsionNet\obj\Debug\Ado.Net RevsionNet.csproj.GenerateResource.cache
+C:\Users\pc\Desktop\tdi\2eme ans 203\ADO.NET\Ado.Net RevsionNet\Ado.Net RevsionNet\obj\Debug\Ado.Net RevsionNet.csproj.CoreCompileInputs.cache
+C:\Users\pc\Desktop\tdi\2eme ans 203\ADO.NET\Ado.Net RevsionNet\Ado.Net RevsionNet\obj\Debug\Ado.Net RevsionNet.exe
+C:\Users\pc\Desktop\tdi\2eme ans 203\ADO.NET\Ado.Net RevsionNet\Ado.Net RevsionNet\obj\Debug\Ado.Net RevsionNet.pdb
