@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
+using System.Data.Common;
 namespace Ado.Net_RevsionNet
 {
     public partial class Form1 : Form
@@ -17,10 +17,12 @@ namespace Ado.Net_RevsionNet
         {
             InitializeComponent();
         }
-        SqlConnection ctn=new SqlConnection(@"Data Source=ELHAJUOJY-LAPTO\MEHDI;Initial Catalog=db_firstLastName;Integrated Security=True");
+        SqlConnection ctn = new SqlConnection(@"Data Source=ELHAJUOJY-LAPTO\MEHDI;Initial Catalog=db_firstLastName;Integrated Security=True");
         
         SqlDataAdapter da;
         DataSet ds;
+        BindingSource Tbiding = new BindingSource();
+        
         private void button1_Click(object sender, EventArgs e)
         {
             
@@ -57,6 +59,11 @@ namespace Ado.Net_RevsionNet
             da = new SqlDataAdapter(cmd);
             ds = new DataSet();
             da.Fill(ds, "personne");
+
+            Tbiding.DataSource = ds.Tables["personne"];
+            textid.DataBindings.Add(new Binding("Text", Tbiding, "id"));
+            textFirstName.DataBindings.Add(new Binding("Text", Tbiding, "firstName"));
+            textLastName.DataBindings.Add(new Binding("Text", Tbiding, "lastName"));
         }
 
         private void btnShowInDgv_Click(object sender, EventArgs e)
@@ -131,61 +138,65 @@ namespace Ado.Net_RevsionNet
 
         private void btnFirst_Click(object sender, EventArgs e)
         {
-            textid.Text = ds.Tables["personne"].Rows [0][0].ToString();
-            textFirstName.Text = ds.Tables["personne"].Rows [0][1].ToString();
-            textLastName.Text = ds.Tables["personne"].Rows[0][2].ToString();
-
+            //textid.Text = ds.Tables["personne"].Rows [0][0].ToString();
+            //textFirstName.Text = ds.Tables["personne"].Rows [0][1].ToString();
+            //textLastName.Text = ds.Tables["personne"].Rows[0][2].ToString();
+            Tbiding.MoveFirst();
         }
 
         private void btnlast_Click(object sender, EventArgs e)
         {
 
-            textid.Text = ds.Tables["personne"].Rows[ds.Tables["personne"].Rows.Count-1][0].ToString();
-            textFirstName.Text = ds.Tables["personne"].Rows[ds.Tables["personne"].Rows.Count-1][1].ToString();
-            textLastName.Text = ds.Tables["personne"].Rows[ds.Tables["personne"].Rows.Count-1][2].ToString();
+            //textid.Text = ds.Tables["personne"].Rows[ds.Tables["personne"].Rows.Count-1][0].ToString();
+            //textFirstName.Text = ds.Tables["personne"].Rows[ds.Tables["personne"].Rows.Count-1][1].ToString();
+            //textLastName.Text = ds.Tables["personne"].Rows[ds.Tables["personne"].Rows.Count-1][2].ToString();
+            Tbiding.MoveLast();
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
 
-            for (i = 0; i < ds.Tables["personne"].Rows.Count; i++)
-            {
-                if (textid.Text == ds.Tables["personne"].Rows[i][0].ToString())
-                {
-                    pos = i;
-                    break;
-                }
-                
-            }
-            textid.Text = ds.Tables["personne"].Rows[pos+1][0].ToString();
-            textFirstName.Text = ds.Tables["personne"].Rows[pos+1][1].ToString();
-            textLastName.Text = ds.Tables["personne"].Rows[pos+1][2].ToString();
+            //for (i = 0; i < ds.Tables["personne"].Rows.Count; i++)
+            //{
+            //    if (textid.Text == ds.Tables["personne"].Rows[i][0].ToString())
+            //    {
+            //        pos = i;
+            //        break;
+            //    }
+
+            //}
+            //textid.Text = ds.Tables["personne"].Rows[pos+1][0].ToString();
+            //textFirstName.Text = ds.Tables["personne"].Rows[pos+1][1].ToString();
+            //textLastName.Text = ds.Tables["personne"].Rows[pos+1][2].ToString();
+            Tbiding.MoveNext();
 
         }
 
         private void btnpervouis_Click(object sender, EventArgs e)
         {
-            
-            try
-            {
-                for (i = 0; i < ds.Tables["personne"].Rows.Count; i++)
-                {
-                    if (textid.Text == ds.Tables["personne"].Rows[i][0].ToString())
-                    {
-                        pos = i;
-                        break;
-                    }
 
-                }
-                textid.Text = ds.Tables["personne"].Rows[pos - 1][0].ToString();
-                textFirstName.Text = ds.Tables["personne"].Rows[pos - 1][1].ToString();
-                textLastName.Text = ds.Tables["personne"].Rows[pos - 1][2].ToString();
-            }
-            catch (Exception ex)
-            {
+            //try
+            //{
+            //    for (i = 0; i < ds.Tables["personne"].Rows.Count; i++)
+            //    {
+            //        if (textid.Text == ds.Tables["personne"].Rows[i][0].ToString())
+            //        {
+            //            pos = i;
+            //            break;
+            //        }
 
-                MessageBox.Show(ex.ToString(),"exception");
-            }
+            //    }
+            //    textid.Text = ds.Tables["personne"].Rows[pos - 1][0].ToString();
+            //    textFirstName.Text = ds.Tables["personne"].Rows[pos - 1][1].ToString();
+            //    textLastName.Text = ds.Tables["personne"].Rows[pos - 1][2].ToString();
+            //}
+            //catch (Exception ex)
+            //{
+
+            //    MessageBox.Show(ex.ToString(),"exception");
+            //}
+
+            Tbiding.MovePrevious();
             
         }
     }
